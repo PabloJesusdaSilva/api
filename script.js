@@ -14,16 +14,15 @@ btn.addEventListener('mousedown', () => {
     .then(res => {
         productDiv.innerHTML = ''
         
-         for(let i = 0; i < 2; i++) {
-             const div = document.createElement("div");
+         for(let i = 0; i < res.length; i++) {
 
              const product = `
-             <p>ID: ${res[i].id}</p>
-             <p>DESCRIÇÃO: ${res[i].descricao}</p>
-             <p>PREÇO: ${res[i].preco}</p>
+             <li>ID: ${res[i].id}</li>
+             <li>DESCRIÇÃO: ${res[i].descricao}</li>
+             <li>PREÇO: ${res[i].preco}</li>
              `;
              
-            productDiv.appendChild(div).innerHTML = product;
+            productDiv.appendChild(ul).innerHTML = product;
         }
         
     });

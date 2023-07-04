@@ -9,6 +9,11 @@
             "id": 2,
             "descricao": "Sapato Oxford Marrom",
             "preco": "379.90"
+        },
+        {
+            "id": 3,
+            "descricao": "Sapato Oxford Preto",
+            "preco": "249.90"
         }
     ],
     "usuarios": [
