@@ -1,7 +1,20 @@
 {
-    "podutos": {
-        "id": 1,
-        "descricao": "Sapato Oxford",
-        "preco": "279.90"
-    }
+    "produtos": [
+        {
+            "id": 1,
+            "descricao": "Sapato Oxford",
+            "preco": "279.90"
+        },
+        {
+            "id": 2,
+            "descricao": "Sapato Oxford Marrom",
+            "preco": "379.90"
+        }
+    ],
+    "usuarios": [
+        {
+            "id": 1,
+            "nome": "Pablo"
+        }
+    ]
 }

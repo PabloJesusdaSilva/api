@@ -4,8 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Api</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100vh;
+        }
+
+        button {
+            width: 160px;
+            height: 50px;
+            margin-bottom: 20px;
+            border: none;
+            border-radius: 6px;
+            font-size: 1.4rem;
+            cursor: pointer;
+            background-color: #1d6feb;
+            color: #FFF;
+        }
+    </style>
 </head>
 <body>
+    <button id="btn">Fetch</button>
+
+    <div id="product"></div>
     
     <script src="script.js"></script>
 </body>
