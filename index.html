@@ -21,8 +21,8 @@
         }
 
         button {
-            width: 160px;
-            height: 50px;
+            width: 180px;
+            height: 60px;
             margin-bottom: 20px;
             border: none;
             border-radius: 6px;
@@ -31,13 +31,53 @@
             background-color: #1d6feb;
             color: #FFF;
         }
+
+        a {
+            text-decoration: none;
+            color: #FFF;
+        }
     </style>
 </head>
 <body>
-    <button id="btn">Fetch</button>
+
+    <div id="product"></div>
+    <button id="btn-fetch">Fetch</button>
+    <button> 
+        <a href="atualizacao.html">Atualizar produto</a>
+    </button>
 
     <div id="product"></div>
     
-    <script src="script.js"></script>
+    <script>
+        const productDiv = document.querySelector('#product');
+        const btn = document.querySelector('#btn-fetch');
+
+        document.querySelector('#btn-fetch').addEventListener('click', () => {
+            fetch('http://localhost:3000/produtos', {
+                method:'GET',
+                headers: {
+                    'Content-type': 'application/json'
+                }
+            })
+
+            .then(res => res.json())
+            .then(res => {
+                productDiv.innerHTML = '';
+                
+                for (let i = 0; i < res.length; i++) {
+                    const ul = document.createElement("ul");
+
+                    const product = `
+                        <li>ID: ${res[i].id}</li>
+                        <li>DESCRIÇÃO: ${res[i].descricao}</li>
+                        <li>PREÇO: ${res[i].preco}</li>
+                        `;
+                    
+                    productDiv.appendChild(ul).innerHTML = product;
+                }      
+            });
+        });
+
+    </script>
 </body>
 </html>

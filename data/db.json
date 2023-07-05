@@ -2,9 +2,9 @@
   "produtos": [
     {
       "id": 1,
-      "descricao": "sapato teste",
-      "preco": "127.89",
-      "imagem": "43443.jpg"
+      "descricao": "produto Oxford",
+      "preco": "1.222.90",
+      "imagem": "teste.png"
     },
     {
       "id": 2,
@@ -16,6 +16,18 @@
       "id": 3,
       "descricao": "Sapato Oxford Preto",
       "preco": "249.90"
+    },
+    {
+      "id": 4,
+      "descricao": "Sapato Oxford Marom",
+      "preco": "1.222.90",
+      "imagem": "teste2.png"
+    },
+    {
+      "id": 5,
+      "descricao": "Sapato Oxford Marom",
+      "preco": "1.222.90",
+      "imagem": "teste2.png"
     }
   ],
   "usuarios": [
