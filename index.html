@@ -5,79 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Api</title>
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            width: 100%;
-            height: 100vh;
-        }
-
-        button {
-            width: 180px;
-            height: 60px;
-            margin-bottom: 20px;
-            border: none;
-            border-radius: 6px;
-            font-size: 1.4rem;
-            cursor: pointer;
-            background-color: #1d6feb;
-            color: #FFF;
-        }
-
-        a {
-            text-decoration: none;
-            color: #FFF;
-        }
-    </style>
 </head>
 <body>
 
-    <div id="product"></div>
-    <button id="btn-fetch">Fetch</button>
-    <button> 
-        <a href="atualizacao.html">Atualizar produto</a>
-    </button>
-
+    <div class="btns">
+        <button id="btn-fetch">Fetch</button>
+        <button> 
+            <a href="atualizacao.html">Atualizar produto</a>
+        </button>
+        
+        <button> 
+            <a href="create-com-post.html">Criar produto</a>
+        </button>
+    </div>
+    
     <div id="product"></div>
     
-    <script>
-        const productDiv = document.querySelector('#product');
-        const btn = document.querySelector('#btn-fetch');
-
-        document.querySelector('#btn-fetch').addEventListener('click', () => {
-            fetch('http://localhost:3000/produtos', {
-                method:'GET',
-                headers: {
-                    'Content-type': 'application/json'
-                }
-            })
-
-            .then(res => res.json())
-            .then(res => {
-                productDiv.innerHTML = '';
-                
-                for (let i = 0; i < res.length; i++) {
-                    const ul = document.createElement("ul");
-
-                    const product = `
-                        <li>ID: ${res[i].id}</li>
-                        <li>DESCRIÇÃO: ${res[i].descricao}</li>
-                        <li>PREÇO: ${res[i].preco}</li>
-                        `;
-                    
-                    productDiv.appendChild(ul).innerHTML = product;
-                }      
-            });
-        });
-
-    </script>
+    <script src="assets/scripts/script.js"></script>
 </body>
 </html>

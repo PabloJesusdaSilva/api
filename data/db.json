@@ -2,32 +2,45 @@
   "produtos": [
     {
       "id": 1,
-      "descricao": "produto Oxford",
-      "preco": "1.222.90",
-      "imagem": "teste.png"
+      "descricao": "Sapato Oxford Marrom",
+      "preco": "270,90",
+      "imagem": "spt.jpg"
     },
     {
       "id": 2,
-      "descricao": "grag",
-      "preco": "rg",
-      "imagem": "rgar"
+      "descricao": "Sapato Oxford ",
+      "preco": "398.90",
+      "imagem": "spt.png"
     },
     {
       "id": 3,
-      "descricao": "Sapato Oxford Preto",
-      "preco": "249.90"
+      "descricao": "Sapato Preto",
+      "preco": "210,90",
+      "imagem": "spt.jpg"
     },
     {
       "id": 4,
-      "descricao": "Sapato Oxford Marom",
-      "preco": "1.222.90",
-      "imagem": "teste2.png"
+      "descricao": "Sapato Marrom Claro",
+      "preco": "209,90",
+      "imagem": "spt.jpg"
     },
     {
       "id": 5,
-      "descricao": "Sapato Oxford Marom",
-      "preco": "1.222.90",
-      "imagem": "teste2.png"
+      "descricao": "Sapato Marrom New York",
+      "preco": "209,90",
+      "imagem": "spt.jpg"
+    },
+    {
+      "id": 6,
+      "descricao": " Sapato Preto New York",
+      "preco": "398,99",
+      "imagem": "est.jpeg"
+    },
+    {
+      "id": 7,
+      "descricao": "",
+      "preco": "",
+      "imagem": ""
     }
   ],
   "usuarios": [

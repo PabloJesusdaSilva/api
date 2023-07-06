@@ -4,116 +4,93 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro de produtos</title>
-
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            width: 100%;
-            height: 100vh;
-        }
-
-        button {
-            width: 180px;
-            height: 60px;
-            margin-bottom: 20px;
-            border: none;
-            border-radius: 6px;
-            font-size: 1.4rem;
-            cursor: pointer;
-            background-color: #1d6feb;
-            color: #FFF;
-        }
-
-        a {
-            text-decoration: none;
-            color: #FFF;
-        }
-    </style>
 </head>
-<body>
-
-    <div id="product-status"></div>
-
+<body>  
+    
     <form method="post">
-        <label>ID</label>
-        <input id="id" type="tel"><br><br>
+        <div id="product-status"></div>
 
-        <label>Descrição</label>
-        <input id="descricao" type="text"><br><br>
+        <label>Descrição:</label>
+        <input id="descricao" type="text">
 
-        <label>Preço</label>
-        <input id="preco" type="text"><br><br>
+        <label>Preço:</label>
+        <input id="preco" type="text">
 
-        <label>Imagem</label>
-        <input id="imagem" type="text"><br><br><br>
+        <label>Imagem:</label>
+        <input id="imagem" type="text">
 
-        <button id="btnCadastro" type="button">Cadastro</button>
-        <button>
-            <a href="index.html">Home</a>
-        </button>
+        <div>
+            <button class="pag-create">
+                <a href="index.html">Home</a>
+            </button>
+            <button id="btnCadastro" type="button">Cadastro</button>
+            <button>
+                <a href="atualizacao.html">Atualizar</a>
+            </button>
+            
+        </div>
+
     </form>
 
     <div id="lista-produtos"></div>
 
     <script>
+        const linkStyles = document.createElement('link');
+        linkStyles.setAttribute('rel', 'stylesheet');
+        linkStyles.setAttribute('href', './assets/css/style.css');
+
+        document.head.appendChild(linkStyles);
+        
         document.querySelector('#btnCadastro').addEventListener('click', () => {
             const dados = {
-                'id': null,
-                'descricao': document.querySelector('#descricao').value,
-                'preco': document.querySelector('#preco').value,
-                'imagem': document.querySelector('#imagem').value
-            }
+            'id': null,
+            'descricao': document.querySelector('#descricao').value,
+            'preco': document.querySelector('#preco').value,
+            'imagem': document.querySelector('#imagem').value
+        }
 
-            fetch(`http://localhost:3000/produtos/`, {
-                method: 'POST',
-                headers: {
-                    'Content-type': 'application/json'
-                },
+        fetch(`http://localhost:3000/produtos/`, {
+            method: 'POST',
+            headers: {
+                'Content-type': 'application/json'
+            },
                 body: JSON. stringify(dados)
+            })
+                .then(res => {
+                    if (res.ok) {
+                        document.querySelector('#product-status').innerHTML = 'Produto Atualizado';
+                    }
                 })
-                    .then(res => {
-                        if (res.ok) {
-                            document.querySelector('#product-status').innerHTML = 'Produto Atualizado';
-                        }
-                    })
-                    
-                getProdutos();
-            });
+                
+            getProdutos();
+        });
 
         function getProdutos() {    
-                fetch('http://localhost:3000/produtos/', {
-                    method:'GET',
-                    headers: {
-                        'Content-type': 'application/json'
-                        }   
-                    })
-                    .then(res => res.json())
-                    .then(res => {
-                        document.querySelector('#lista-produtos').innerHTML = '';
-                        
-                        for (let i = 0; i < res.length; i++) {
-                            const ul = document.createElement("ul");
-                            const img = document.createElement("img");
+            fetch('http://localhost:3000/produtos/', {
+                method:'GET',
+                headers: {
+                    'Content-type': 'application/json'
+                    }   
+                })
+                .then(res => res.json())
+                .then(res => {
+                    document.querySelector('#lista-produtos').innerHTML = '';
+                    
+                    for (let i = 0; i < res.length; i++) {
+                        const ul = document.createElement("ul");
+                        const img = document.createElement("img");
 
-                            ul.appendChild(document.createElement("li")).innerHTML = res[i].id;
-                            ul.appendChild(document.createElement("li")).innerHTML = res[i].descricao;
-                            ul.appendChild(document.createElement("li")).innerHTML = res[i].preco;
-                            ul.appendChild(document.createElement("li")).appendChild(img).setAttribute('src', res[i].imagem);
+                        ul.appendChild(document.createElement("li")).innerHTML = res[i].id;
+                        ul.appendChild(document.createElement("li")).innerHTML = res[i].descricao;
+                        ul.appendChild(document.createElement("li")).innerHTML = res[i].preco;
+                        ul.appendChild(document.createElement("li")).appendChild(img).setAttribute('src', res[i].imagem);
 
-                            document.querySelector('#lista-produtos').appendChild(ul);
-                        }
-                });
-            }
+                        document.querySelector('#lista-produtos').appendChild(ul);
+                    }
+            });
+        }
 
-        getProdutos()
+     getProdutos()
     </script>
 </body>
 </html>
