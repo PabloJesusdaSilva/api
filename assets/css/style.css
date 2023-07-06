@@ -3,6 +3,7 @@
     padding: 0;
     box-sizing: border-box;
 }
+web
 
 body {
     display: flex;
@@ -42,7 +43,7 @@ a {
 form {
     display: flex;
     flex-direction: column;
-    width: 50%;
+    width: 800px;
 }
 
 label {
@@ -53,18 +54,31 @@ input {
     width: 600px;
     height: 40px;
     margin: 5px 0 15px 0;
+    padding-left: 10px;
+}
+
+#product-status.active {
+    width: 200px;
+    height: auto;
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 6px;
+    font-size: 1.3rem;
+    border: 1px solid #44d156;
+    color: #44d156;
+
 }
 
 #lista-produtos {
     display: flex;
     flex-wrap: wrap;
-    width: 100px;
+    width: 800px;
 }
 
 ul {
     display: flex;
     justify-content: space-between;
-    width: 500px;
+    width: 650px;
     margin: 30px;
     border-radius: 6px;
     border: 1px solid #d2d2d2;

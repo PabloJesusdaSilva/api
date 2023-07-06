@@ -25,7 +25,7 @@
         <input id="imagem" type="text"><br><br><br>
 
         <div>
-            <button>
+            <button class="pag-create">
                 <a href="index.html">Home</a>
             </button>
             <button id="btnAtuazlizar" type="button">Atualizar</button>
@@ -39,6 +39,12 @@
 
 
     <script>
+        const linkStyles = document.createElement('link');
+        linkStyles.setAttribute('rel', 'stylesheet');
+        linkStyles.setAttribute('href', './assets/css/style.css');
+
+        document.head.appendChild(linkStyles);
+
         const btnAtualizar = document.querySelector('#btnAtuazlizar');
 
         btnAtualizar.addEventListener('click', () => {
@@ -60,9 +66,10 @@
             })
                 .then(res => {
                     if (res.ok) {
+                        document.querySelector('#product-status').classList.add('active');
                         document.querySelector('#product-status').innerHTML = 'Produto Atualizado';
                     }
-                })
+                });
                 
             getProdutos();
         });
@@ -92,7 +99,7 @@
             });
         }
 
-        getProdutos()
+        getProdutos();
     </script>
 </body>
 </html>

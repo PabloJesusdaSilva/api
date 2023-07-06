@@ -2,9 +2,9 @@
   "produtos": [
     {
       "id": 1,
-      "descricao": "Sapato Oxford Marrom",
-      "preco": "270,90",
-      "imagem": "spt.jpg"
+      "descricao": "Sapato Oxford Preto California",
+      "preco": "439.99",
+      "imagem": "spt.png"
     },
     {
       "id": 2,
@@ -32,15 +32,21 @@
     },
     {
       "id": 6,
-      "descricao": " Sapato Preto New York",
-      "preco": "398,99",
-      "imagem": "est.jpeg"
+      "descricao": "Sapato Oxford ",
+      "preco": "439.99",
+      "imagem": "spt.png"
     },
     {
       "id": 7,
       "descricao": "",
       "preco": "",
       "imagem": ""
+    },
+    {
+      "id": 8,
+      "descricao": "Sapato Oxford Orlando",
+      "preco": "239.99",
+      "imagem": "sptor.png"
     }
   ],
   "usuarios": [
