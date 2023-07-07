@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Api</title>
-
 </head>
 <body>
 
     <div class="btns">
         <button id="btn-fetch">Fetch</button>
+
         <button> 
-            <a href="atualizacao.html">Atualizar produto</a>
+            <a type="button" href="atualizacao.html">Atualizar produto</a>
         </button>
         
         <button> 
@@ -19,8 +19,13 @@
         </button>
     </div>
     
-    <div id="product"></div>
+    <div id="listaProdutos"></div>
     
     <script src="assets/scripts/script.js"></script>
+    <script>
+        document.querySelector('#btn-fetch').addEventListener('click', () => {
+            getProdutos(true);
+        }); 
+    </script>
 </body>
 </html>

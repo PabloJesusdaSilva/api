@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Api</title>
+</head>
+<body>
+
+    <div class="btns">
+        <button id="btn-fetch">Fetch</button>
+
+        <button> 
+            <a href="atualizacao.html">Atualizar produto</a>
+        </button>
+        
+        <button> 
+            <a href="create-com-post.html">Criar produto</a>
+        </button>
+    </div>
+    
+    <div id="listaProdutos"></div>
+    
+    <script src="assets/scripts/script.js"></script>
+    <script>
+        getProdutos(true);      
+
+        document.querySelector('#listaProdutos').addEventListener('click', e => {
+            if(e.target.classList.contains('btnDelete')) {
+
+                let idProduto = e.target.value;
+
+                fetch(`http://localhost:3000/produtos/${idProduto}`, {
+                    method: 'DELETE',
+                    headers: {
+                        'Content-type': 'application/json'
+                    }
+                })
+                
+                    .then(res => {
+                        if(res.ok) {
+                            location.reload()
+                        }
+                    });
+
+                getProdutos(true);
+            }
+        
+        });
+
+        const listaProdutos = document.querySelector('#listaProdutos');
+
+    </script>
+</body>
+</html>

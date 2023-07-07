@@ -37,34 +37,10 @@
       "imagem": "spt.png"
     },
     {
-      "id": 7,
-      "descricao": "",
-      "preco": "",
-      "imagem": ""
-    },
-    {
       "id": 8,
       "descricao": "Sapato Oxford Orlando",
       "preco": "239.99",
       "imagem": "sptor.png"
-    },
-    {
-      "id": 9,
-      "descricao": "",
-      "preco": "",
-      "imagem": ""
-    },
-    {
-      "id": 10,
-      "descricao": "",
-      "preco": "",
-      "imagem": ""
-    },
-    {
-      "id": 11,
-      "descricao": "",
-      "preco": "",
-      "imagem": ""
     }
   ],
   "usuarios": [

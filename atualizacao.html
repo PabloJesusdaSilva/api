@@ -8,9 +8,9 @@
 </head>
 <body>
 
+    <div id="resposta"></div>
     
     <form action="" method="post">
-        <div id="product-status"></div>
         
         <label>ID</label>
         <input id="id" type="tel"><br><br>
@@ -28,76 +28,47 @@
             <button class="pag-create">
                 <a href="index.html">Home</a>
             </button>
+
             <button id="btnAtuazlizar" type="button">Atualizar</button>
+
             <button>
                 <a href="create-com-post.html">Criar produto</a>
             </button>
         </div>
     </form>
 
-    <div id="lista-produtos"></div>
+    <div id="listaProdutos"></div>
 
-
+    <script src="assets/scripts/script.js"></script>
     <script>
-        const linkStyles = document.createElement('link');
-        linkStyles.setAttribute('rel', 'stylesheet');
-        linkStyles.setAttribute('href', './assets/css/style.css');
-
-        document.head.appendChild(linkStyles);
-
         const btnAtualizar = document.querySelector('#btnAtuazlizar');
 
         btnAtualizar.addEventListener('click', () => {
-        const id = document.querySelector('#id').value;
+            const id = document.querySelector('#id').value;
 
-        const dados = {
-            'id': null,
-            'descricao': document.querySelector('#descricao').value,
-            'preco': document.querySelector('#preco').value,
-            'imagem': document.querySelector('#imagem').value
-        }
+            const dados = {
+                'id': null,
+                'descricao': document.querySelector('#descricao').value,
+                'preco': document.querySelector('#preco').value,
+                'imagem': document.querySelector('#imagem').value
+            }
 
-        fetch(`http://localhost:3000/produtos/${id}`, {
-            method: 'PUT',
-            headers: {
-                'Content-type': 'application/json'
-            },
-            body: JSON. stringify(dados)
-            })
-                .then(res => {
-                    if (res.ok) {
-                        document.querySelector('#product-status').classList.add('active');
-                        document.querySelector('#product-status').innerHTML = 'Produto Atualizado';
-                    }
-                });
-                
-            getProdutos();
-        });
-
-        function getProdutos() {    
-            fetch('http://localhost:3000/produtos/', {
-                method:'GET',
+            fetch(`http://localhost:3000/produtos/${id}`, {
+                method: 'PUT',
                 headers: {
                     'Content-type': 'application/json'
-                    }   
-                })
-                .then(res => res.json())
-                .then(res => {
-                    document.querySelector('#lista-produtos').innerHTML = '';
+                },
+                body: JSON.stringify(dados)
+            })
+                    .then(res => {
+                        if (res.ok) {
+                            document.querySelector('#resposta').classList.add('active');
+                            document.querySelector('#resposta').innerHTML = 'Produto Atualizado';
+                        }
+                    });
                     
-                    for (let i = 0; i < res.length; i++) {
-                        const ul = document.createElement("ul");
-                        const img = document.createElement("img");
-
-                        ul.appendChild(document.createElement("li")).innerHTML = res[i].id;
-                        ul.appendChild(document.createElement("li")).innerHTML = res[i].descricao;
-                        ul.appendChild(document.createElement("li")).innerHTML = res[i].preco;
-                        ul.appendChild(document.createElement("li")).appendChild(img).setAttribute('src', res[i].imagem);
-
-                        document.querySelector('#lista-produtos').appendChild(ul);
-                    }
-            });
-        }
+            getProdutos();
+        });
 
         getProdutos();
     </script>
