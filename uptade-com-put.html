@@ -60,17 +60,26 @@
                 },
                 body: JSON.stringify(dados)
             })
-                    .then(res => {
-                        if (res.ok) {
-                            document.querySelector('#resposta').classList.add('active');
-                            document.querySelector('#resposta').innerHTML = 'Produto Atualizado';
-                        }
-                    });
+                .then(res => {
+                    if (res.ok) {
+                        document.querySelector('#resposta').innerHTML = 'Produto Atualizado';
+                    }
+                });
                     
-            getProdutos();
-        });
+                getProdutos();
 
-        getProdutos();
+            });
+
+            
+            getProdutos();
+            
+            let id = document.querySelector('#id')
+            let descricao = document.querySelector('#descricao')
+            let preco = document.querySelector('#preco')
+
+            if (id = true) {
+                btnAtualizar.disabled = true
+            }
     </script>
 </body>
 </html>

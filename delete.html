@@ -10,27 +10,26 @@
     <div class="btns">
         <button id="btn-fetch">Fetch</button>
 
-        <button> 
-            <a href="atualizacao.html">Atualizar produto</a>
-        </button>
         
         <button> 
             <a href="create-com-post.html">Criar produto</a>
+        </button>
+        
+        <button> 
+            <a href="uptade-com-put.html">Atualizar produto</a>
         </button>
     </div>
     
     <div id="listaProdutos"></div>
     
     <script src="assets/scripts/script.js"></script>
-    <script>
-        getProdutos(true);      
 
-        document.querySelector('#listaProdutos').addEventListener('click', e => {
+    <script>
+
+        document.addEventListener('click', e => {
             if(e.target.classList.contains('btnDelete')) {
 
-                let idProduto = e.target.value;
-
-                fetch(`http://localhost:3000/produtos/${idProduto}`, {
+                fetch(`http://localhost:3000/produtos/${e.target.value}`, {
                     method: 'DELETE',
                     headers: {
                         'Content-type': 'application/json'
@@ -39,17 +38,15 @@
                 
                     .then(res => {
                         if(res.ok) {
-                            location.reload()
+                            alert('Produto Atualizado');
                         }
                     });
 
                 getProdutos(true);
             }
-        
         });
 
-        const listaProdutos = document.querySelector('#listaProdutos');
-
+        getProdutos(true);      
     </script>
 </body>
 </html>

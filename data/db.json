@@ -2,51 +2,57 @@
   "produtos": [
     {
       "id": 1,
-      "descricao": "Sapato Oxford Preto California",
-      "preco": "439.99",
-      "imagem": "spt.png"
+      "descricao": "SAPATO oxford",
+      "preco": "289.90",
+      "imagem": ""
     },
     {
       "id": 2,
-      "descricao": "Sapato Oxford ",
-      "preco": "398.90",
-      "imagem": "spt.png"
+      "descricao": "Sapato Oxford 2",
+      "preco": "289.90",
+      "imagem": ""
     },
     {
       "id": 3,
       "descricao": "Sapato Preto",
       "preco": "210,90",
-      "imagem": "spt.jpg"
+      "imagem": "./assets/img/shopping.webp"
     },
     {
       "id": 4,
       "descricao": "Sapato Marrom Claro",
       "preco": "209,90",
-      "imagem": "spt.jpg"
+      "imagem": "./assets/img/shopping.webp"
     },
     {
       "id": 5,
       "descricao": "Sapato Marrom New York",
       "preco": "209,90",
-      "imagem": "spt.jpg"
+      "imagem": "./assets/img/shopping.webp"
     },
     {
       "id": 6,
       "descricao": "Sapato Oxford ",
       "preco": "439.99",
-      "imagem": "spt.png"
+      "imagem": "./assets/img/shopping.webp"
     },
     {
       "id": 8,
       "descricao": "Sapato Oxford Orlando",
       "preco": "239.99",
-      "imagem": "sptor.png"
-    }
-  ],
-  "usuarios": [
+      "imagem": "./assets/img/shopping.webp"
+    },
     {
-      "id": 1,
-      "nome": "Pablo"
+      "id": 9,
+      "descricao": "",
+      "preco": "",
+      "imagem": ""
+    },
+    {
+      "id": 10,
+      "descricao": "Sapato Oxford test",
+      "preco": "348.90",
+      "imagem": ""
     }
   ]
 }
