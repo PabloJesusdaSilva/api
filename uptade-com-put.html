@@ -84,13 +84,17 @@
                     document.querySelector('#preco').value = elementoBase.querySelector('[data-produto="preco"]').innerHTML;
                     document.querySelector('#imagem').value = elementoBase.querySelector('[data-produto="imagem"]').innerHTML;
 
+                    limparFormulario();
+
                 } else if(e.target.parentNode.classList.contains('produto')) {
-                    const elementoBase = e.target
+                    const elementoBase = e.target.parentNode
 
                     document.querySelector('#id').value = elementoBase.querySelector('[data-produto="id"]').innerHTML;
                     document.querySelector('#descricao').value = elementoBase.querySelector('[data-produto="descricao"]').innerHTML;
                     document.querySelector('#preco').value = elementoBase.querySelector('[data-produto="preco"]').innerHTML;
                     document.querySelector('#imagem').value = elementoBase.querySelector('[data-produto="imagem"]').innerHTML;
+
+                    limparFormulario();
                 }
             });
 
@@ -113,7 +117,6 @@
                 btnAtualizar.setAttribute('disabled', '');
             }
         }
-        
     </script>
 </body>
 </html>
