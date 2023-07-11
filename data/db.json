@@ -4,7 +4,7 @@
       "id": 1,
       "descricao": "SAPATO oxford",
       "preco": "289.90",
-      "imagem": ""
+      "imagem": "./assets/img/shopping.webp"
     },
     {
       "id": 3,
@@ -22,12 +22,6 @@
       "id": 5,
       "descricao": "Sapato Marrom New York",
       "preco": "209,90",
-      "imagem": "./assets/img/shopping.webp"
-    },
-    {
-      "id": 6,
-      "descricao": "Sapato Oxford ",
-      "preco": "439.99",
       "imagem": "./assets/img/shopping.webp"
     }
   ]

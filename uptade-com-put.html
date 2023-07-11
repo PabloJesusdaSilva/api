@@ -29,11 +29,14 @@
                 <a href="index.html">Home</a>
             </button>
 
-            <button id="btnAtuazlizar" type="button">Atualizar</button>
+            <button id="btnAtuazlizar" type="button" disabled>Atualizar</button>
 
             <button>
                 <a href="create-com-post.html">Criar produto</a>
             </button>
+
+            <button type="reset" id="reset" disabled>Cancelar</button>
+
         </div>
     </form>
 
@@ -42,7 +45,7 @@
     <script src="assets/scripts/script.js"></script>
     <script>
         const btnAtualizar = document.querySelector('#btnAtuazlizar');
-
+        
         btnAtualizar.addEventListener('click', () => {
             const id = document.querySelector('#id').value;
 
@@ -70,33 +73,47 @@
 
             });
 
-            getProdutos();
+        getProdutos();
             
-            document.addEventListener('click', e => {
+        document.addEventListener('click', e => {
                 if(e.target.classList.contains('produto')) {
+                    const elementoBase = e.target
 
-                    let produto = document.querySelector('.produto')
+                    document.querySelector('#id').value = elementoBase.querySelector('[data-produto="id"]').innerHTML;
+                    document.querySelector('#descricao').value = elementoBase.querySelector('[data-produto="descricao"]').innerHTML;
+                    document.querySelector('#preco').value = elementoBase.querySelector('[data-produto="preco"]').innerHTML;
+                    document.querySelector('#imagem').value = elementoBase.querySelector('[data-produto="imagem"]').innerHTML;
 
                 } else if(e.target.parentNode.classList.contains('produto')) {
+                    const elementoBase = e.target
 
-                    let produtos = document.querySelector('#listaProdutos')
-                    console.log(produtos.children.innerHTML)
-
-                    let produto = document.querySelector('.produto')
-
-                    let inputId = document.querySelector('#id');
-                        inputId.value = produto.children[0].innerHTML;
-                    
-                    let inputDescricao = document.querySelector('#descricao');
-                        inputDescricao.value = produto.children[1].innerHTML;
-
-                    let inputPreco = document.querySelector('#preco');
-                        inputPreco.value = produto.children[2].innerHTML;
-
-                    let inputImagem = document.querySelector('#imagem');
-                        inputImagem.value = produto.children[3].innerHTML;
+                    document.querySelector('#id').value = elementoBase.querySelector('[data-produto="id"]').innerHTML;
+                    document.querySelector('#descricao').value = elementoBase.querySelector('[data-produto="descricao"]').innerHTML;
+                    document.querySelector('#preco').value = elementoBase.querySelector('[data-produto="preco"]').innerHTML;
+                    document.querySelector('#imagem').value = elementoBase.querySelector('[data-produto="imagem"]').innerHTML;
                 }
             });
+
+        function limparFormulario() {
+            const idPreenchido = document.querySelector('#id').value !== "";
+            const descricaoPreenchida = document.querySelector('#descricao').value !== "";
+            const precoPreenchido = document.querySelector('#preco').value !== "";
+            const imagemPreenchido = document.querySelector('#imagem').value !== "";
+            
+            const btnReset = document.querySelector('#reset');
+
+            if(idPreenchido || descricaoPreenchida || precoPreenchido || imagemPreenchido) {
+                btnReset.removeAttribute('disabled');
+
+                if(idPreenchido) {
+                    btnReset.setAttribute('disabled', '');
+                }
+            } else {
+                btnReset.setAttribute('disabled', '');
+                btnAtualizar.setAttribute('disabled', '');
+            }
+        }
+        
     </script>
 </body>
 </html>

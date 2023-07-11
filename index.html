@@ -27,9 +27,7 @@
             getProdutos(true);
         }); 
 
-        document.addEventListener('click', e => {
-            console.log(e.target)
-            
+        document.addEventListener('click', e => {            
             if(e.target.classList.contains('btnDelete')) {
 
                 fetch(`http://localhost:3000/produtos/${e.target.value}`, {
