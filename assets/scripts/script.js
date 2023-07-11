@@ -23,8 +23,6 @@ function getProdutos(btnDelete = false) {
                     const ul = document.createElement('ul');
                     ul.classList.add('produto');
 
-                   
-
                     const img = document.createElement('img');
 
                     if (btnDelete) {
@@ -33,7 +31,7 @@ function getProdutos(btnDelete = false) {
                         const btn = document.createElement('button');
                         btn.type = 'button';
                         btn.innerHTML = 'X';
-                        btn.classList.add('btn-delete');
+                        btn.classList.add('btnDelete');
                         btn.value = res[i].id;
 
                         ul.appendChild(liBtn).appendChild(btn);

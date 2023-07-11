@@ -26,6 +26,30 @@
         document.querySelector('#btn-fetch').addEventListener('click', () => {
             getProdutos(true);
         }); 
+
+        document.addEventListener('click', e => {
+            console.log(e.target)
+            
+            if(e.target.classList.contains('btnDelete')) {
+
+                fetch(`http://localhost:3000/produtos/${e.target.value}`, {
+                    method: 'DELETE',
+                    headers: {
+                        'Content-type': 'application/json'
+                    }
+                })
+                
+                    .then(res => {
+                        if(res.ok) {
+                            alert('Produto Atualizado');
+                        }
+                    });
+
+                getProdutos(true);
+            }
+        });
+
+        getProdutos(true);      
     </script>
 </body>
 </html>

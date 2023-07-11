@@ -65,21 +65,38 @@
                         document.querySelector('#resposta').innerHTML = 'Produto Atualizado';
                     }
                 });
-                    
+
                 getProdutos();
 
             });
 
-            
             getProdutos();
             
-            let id = document.querySelector('#id')
-            let descricao = document.querySelector('#descricao')
-            let preco = document.querySelector('#preco')
+            document.addEventListener('click', e => {
+                if(e.target.classList.contains('produto')) {
 
-            if (id = true) {
-                btnAtualizar.disabled = true
-            }
+                    let produto = document.querySelector('.produto')
+
+                } else if(e.target.parentNode.classList.contains('produto')) {
+
+                    let produtos = document.querySelector('#listaProdutos')
+                    console.log(produtos.children.innerHTML)
+
+                    let produto = document.querySelector('.produto')
+
+                    let inputId = document.querySelector('#id');
+                        inputId.value = produto.children[0].innerHTML;
+                    
+                    let inputDescricao = document.querySelector('#descricao');
+                        inputDescricao.value = produto.children[1].innerHTML;
+
+                    let inputPreco = document.querySelector('#preco');
+                        inputPreco.value = produto.children[2].innerHTML;
+
+                    let inputImagem = document.querySelector('#imagem');
+                        inputImagem.value = produto.children[3].innerHTML;
+                }
+            });
     </script>
 </body>
 </html>

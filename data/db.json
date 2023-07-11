@@ -7,12 +7,6 @@
       "imagem": ""
     },
     {
-      "id": 2,
-      "descricao": "Sapato Oxford 2",
-      "preco": "289.90",
-      "imagem": ""
-    },
-    {
       "id": 3,
       "descricao": "Sapato Preto",
       "preco": "210,90",
@@ -35,24 +29,6 @@
       "descricao": "Sapato Oxford ",
       "preco": "439.99",
       "imagem": "./assets/img/shopping.webp"
-    },
-    {
-      "id": 8,
-      "descricao": "Sapato Oxford Orlando",
-      "preco": "239.99",
-      "imagem": "./assets/img/shopping.webp"
-    },
-    {
-      "id": 9,
-      "descricao": "",
-      "preco": "",
-      "imagem": ""
-    },
-    {
-      "id": 10,
-      "descricao": "Sapato Oxford test",
-      "preco": "348.90",
-      "imagem": ""
     }
   ]
 }
