@@ -4,45 +4,61 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Atualização de produtos</title>
-
 </head>
 <body>
+    <header>
+        <nav class="navbar">
+            <ul>
+                <li>
+                    <a href="create-com-post.html">Criar produto</a>
+                </li>
+                <li>
+                    <a type="button" href="uptade-com-put.html">Atualizar produto</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
 
-    <div id="resposta"></div>
-    
-    <form action="" method="post">
+
+
+    <main>
+        <div id="resposta"></div>
         
-        <label>ID</label>
-        <input id="id" type="tel"><br><br>
+        <form action="" method="post" class="form">
+            <h1>Alteração de Produtos</h1>
 
-        <label>Descrição</label>
-        <input id="descricao" type="text"><br><br>
+            <div class="box-input">
+                <label>ID</label>
+                <input id="id" type="tel" placeholder="digite o ID do produto">
+            </div>
+            
+            <div class="box-input">
+                <label>Descrição</label>
+                <input id="descricao" type="text" placeholder="digite a descrição do produto">
+            </div>
+            
+            <div class="box-input">
+                <label>Preço</label>
+                <input id="preco" type="text" placeholder="Digite o preço do produto">
+            </div>
+            
+            <div class="box-input">
+                <label>Imagem</label>
+                <input id="imagem" type="text" placeholder="Digite o nome da imagem">
+            </div>
+            
+            <div>   
+                <button type="button" id="btnAtuazlizar" disabled>Atualizar</button>
+                
+                <button type="reset" id="reset" disabled>Cancelar</button>
+            </div>
+        </form>
 
-        <label>Preço</label>
-        <input id="preco" type="text"><br><br>
-
-        <label>Imagem</label>
-        <input id="imagem" type="text"><br><br><br>
-
-        <div>
-            <button class="pag-create">
-                <a href="index.html">Home</a>
-            </button>
-
-            <button id="btnAtuazlizar" type="button" disabled>Atualizar</button>
-
-            <button>
-                <a href="create-com-post.html">Criar produto</a>
-            </button>
-
-            <button type="reset" id="reset" disabled>Cancelar</button>
-
-        </div>
-    </form>
-
-    <div id="listaProdutos"></div>
+        <div id="listaProdutos"></div>
+    </main>
 
     <script src="assets/scripts/script.js"></script>
+
     <script>
         const btnAtualizar = document.querySelector('#btnAtuazlizar');
         

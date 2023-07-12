@@ -6,37 +6,44 @@
     <title>Cadastro de produtos</title>
 </head>
 <body>  
+    <header>
+        <nav class="navbar">
+            <ul>
+                <li>
+                    <a href="create-com-post.html">Criar produto</a>
+                </li>
+                <li>
+                    <a type="button" href="uptade-com-put.html">Atualizar produto</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
     
-    <form method="post">
-        <div id="resposta"></div>
+    <main>
+        <form method="post" class="form">
+            <div id="resposta"></div>
 
-        <label>Descrição:</label>
-        <input id="descricao" type="text">
+            <label>Descrição:</label>
+            <input id="descricao" type="text">
 
-        <label>Preço:</label>
-        <input id="preco" type="text">
+            <label>Preço:</label>
+            <input id="preco" type="text">
 
-        <label>Imagem:</label>
-        <input id="imagem" type="text">
+            <label>Imagem:</label>
+            <input id="imagem" type="text">
 
-        <div>
-            <button class="pag-create">
-                <a href="index.html">Home</a>
-            </button>
-            
-            <button id="btnCadastro" type="button">Cadastrar</button>
+            <div>
+                <button id="btnCadastro" type="button">Cadastrar</button>
 
-            <button>
-                <a href="uptade-com-put.html">Atualizar</a>
-            </button>
-            
-        </div>
+                <button>Atualizar</button>
+            </div>
+        </form>
 
-    </form>
-
-    <div id="listaProdutos"></div>
+        <div id="listaProdutos"></div>
+    </main>
 
     <script src="assets/scripts/script.js"></script>
+
     <script>
         document.querySelector('#btnCadastro').addEventListener('click', () => {
 

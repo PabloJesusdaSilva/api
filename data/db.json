@@ -17,12 +17,6 @@
       "descricao": "Sapato Marrom Claro",
       "preco": "209,90",
       "imagem": "./assets/img/shopping.webp"
-    },
-    {
-      "id": 5,
-      "descricao": "Sapato Marrom New York",
-      "preco": "209,90",
-      "imagem": "./assets/img/shopping.webp"
     }
   ]
 }
