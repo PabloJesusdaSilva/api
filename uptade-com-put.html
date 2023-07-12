@@ -108,7 +108,7 @@
                     document.querySelector('input#id').value = elementoBase.querySelector('[data-produto="id"]').innerHTML;
                     document.querySelector('input#descricao').value = elementoBase.querySelector('[data-produto="descricao"]').innerHTML;
                     document.querySelector('input#preco').value = elementoBase.querySelector('[data-produto="preco"]').innerHTML;
-                    document.querySelector('input#imagem').value = elementoBase.querySelector('[data-produto="imagem"]').getAttribute('src').split("images/").pop();
+                    document.querySelector('input#imagem').value = elementoBase.querySelector('[data-produto="imagem"]').getAttribute('src').split("img/").pop();
 
                     limparFormulario();
                 }
@@ -122,6 +122,7 @@
             
             if(idPreenchido || descricaoPreenchida || precoPreenchido || imagemPreenchido) {
                 document.querySelector('button#reset').removeAttribute('disabled');
+                document.querySelector('button#btnAtuazlizar').removeAttribute('disabled');
 
                 if(idPreenchido) {
                     document.querySelector('button#reset').removeAttribute('disabled');

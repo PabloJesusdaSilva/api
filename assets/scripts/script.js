@@ -24,22 +24,22 @@ function getProdutos(btnDelete = false) {
                     ul.classList.add('produto');
 
                     const img = document.createElement('img');
-                    img.setAttribute('src', res[i].imagem);
+                    img.setAttribute('src', `./assets/img/${res[i].imagem}`);
                     img.setAttribute('data-produto', 'imagem');
 
-                    let liId = document.createElement('li');
+                    const liId = document.createElement('li');
                     liId.innerHTML = res[i].id;
                     liId.setAttribute('data-produto', 'id');
                     
-                    let liDescricao = document.createElement('li');
+                    const liDescricao = document.createElement('li');
                     liDescricao.innerHTML = res[i].descricao;
                     liDescricao.setAttribute('data-produto', 'descricao');
 
-                    let liPreco = document.createElement('li');
+                    const liPreco = document.createElement('li');
                     liPreco.innerHTML = res[i].preco;
                     liPreco.setAttribute('data-produto', 'preco');
 
-                    let liImagem = document.createElement('li');
+                    const liImagem = document.createElement('li');
                     ul.appendChild(liImagem).appendChild(img);
 
                     ul.append(liId, liDescricao, liPreco);
