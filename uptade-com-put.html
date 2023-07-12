@@ -29,22 +29,22 @@
 
             <div class="box-input">
                 <label>ID</label>
-                <input id="id" type="tel" placeholder="digite o ID do produto">
+                <input type="tel" id="id" placeholder="digite o ID do produto">
             </div>
             
             <div class="box-input">
                 <label>Descrição</label>
-                <input id="descricao" type="text" placeholder="digite a descrição do produto">
+                <input type="text" id="descricao" placeholder="digite a descrição do produto">
             </div>
             
             <div class="box-input">
                 <label>Preço</label>
-                <input id="preco" type="text" placeholder="Digite o preço do produto">
+                <input type="text" id="preco" placeholder="Digite o preço do produto">
             </div>
             
             <div class="box-input">
                 <label>Imagem</label>
-                <input id="imagem" type="text" placeholder="Digite o nome da imagem">
+                <input type="text" id="imagem" placeholder="Digite o nome da imagem">
             </div>
             
             <div>   
@@ -63,7 +63,7 @@
         const btnAtualizar = document.querySelector('#btnAtuazlizar');
         
         btnAtualizar.addEventListener('click', () => {
-            const id = document.querySelector('#id').value;
+            const id = document.querySelector('input#id').value;
 
             const dados = {
                 'id': null,
@@ -95,42 +95,41 @@
                 if(e.target.classList.contains('produto')) {
                     const elementoBase = e.target
 
-                    document.querySelector('#id').value = elementoBase.querySelector('[data-produto="id"]').innerHTML;
-                    document.querySelector('#descricao').value = elementoBase.querySelector('[data-produto="descricao"]').innerHTML;
-                    document.querySelector('#preco').value = elementoBase.querySelector('[data-produto="preco"]').innerHTML;
-                    document.querySelector('#imagem').value = elementoBase.querySelector('[data-produto="imagem"]').innerHTML;
+                    document.querySelector('input#id').value = elementoBase.querySelector('[data-produto="id"]').innerHTML;
+                    document.querySelector('input#descricao').value = elementoBase.querySelector('[data-produto="descricao"]').innerHTML;
+                    document.querySelector('input#preco').value = elementoBase.querySelector('[data-produto="preco"]').innerHTML;
+                    document.querySelector('input#imagem').value = elementoBase.querySelector('[data-produto="imagem"]').innerHTML;
 
                     limparFormulario();
 
                 } else if(e.target.parentNode.classList.contains('produto')) {
                     const elementoBase = e.target.parentNode
 
-                    document.querySelector('#id').value = elementoBase.querySelector('[data-produto="id"]').innerHTML;
-                    document.querySelector('#descricao').value = elementoBase.querySelector('[data-produto="descricao"]').innerHTML;
-                    document.querySelector('#preco').value = elementoBase.querySelector('[data-produto="preco"]').innerHTML;
-                    document.querySelector('#imagem').value = elementoBase.querySelector('[data-produto="imagem"]').innerHTML;
+                    document.querySelector('input#id').value = elementoBase.querySelector('[data-produto="id"]').innerHTML;
+                    document.querySelector('input#descricao').value = elementoBase.querySelector('[data-produto="descricao"]').innerHTML;
+                    document.querySelector('input#preco').value = elementoBase.querySelector('[data-produto="preco"]').innerHTML;
+                    document.querySelector('input#imagem').value = elementoBase.querySelector('[data-produto="imagem"]').getAttribute('src').split("images/").pop();
 
                     limparFormulario();
                 }
             });
 
         function limparFormulario() {
-            const idPreenchido = document.querySelector('#id').value !== "";
-            const descricaoPreenchida = document.querySelector('#descricao').value !== "";
-            const precoPreenchido = document.querySelector('#preco').value !== "";
-            const imagemPreenchido = document.querySelector('#imagem').value !== "";
+            const idPreenchido = document.querySelector('input#id').value !== "";
+            const descricaoPreenchida = document.querySelector('input#descricao').value !== "";
+            const precoPreenchido = document.querySelector('input#preco').value !== "";
+            const imagemPreenchido = document.querySelector('input#imagem').value !== "";
             
-            const btnReset = document.querySelector('#reset');
-
             if(idPreenchido || descricaoPreenchida || precoPreenchido || imagemPreenchido) {
-                btnReset.removeAttribute('disabled');
+                document.querySelector('button#reset').removeAttribute('disabled');
 
                 if(idPreenchido) {
-                    btnReset.setAttribute('disabled', '');
+                    document.querySelector('button#reset').removeAttribute('disabled');
                 }
+
             } else {
-                btnReset.setAttribute('disabled', '');
-                btnAtualizar.setAttribute('disabled', '');
+                document.querySelector('button#reset').setAttribute('disabled', '');
+                document.querySelector('button#btnAtuazlizar').setAttribute('disabled', '');
             }
         }
     </script>

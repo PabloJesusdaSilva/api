@@ -7,15 +7,15 @@
       "imagem": "./assets/img/shopping.webp"
     },
     {
-      "id": 3,
-      "descricao": "Sapato Preto",
-      "preco": "210,90",
+      "id": 2,
+      "descricao": "Sapato Marrom Claro",
+      "preco": "209,90",
       "imagem": "./assets/img/shopping.webp"
     },
     {
-      "id": 4,
-      "descricao": "Sapato Marrom Claro",
-      "preco": "209,90",
+      "id": 3,
+      "descricao": "Sapato Preto",
+      "preco": "289.90",
       "imagem": "./assets/img/shopping.webp"
     }
   ]

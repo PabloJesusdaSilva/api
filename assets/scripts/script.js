@@ -23,9 +23,27 @@ function getProdutos(btnDelete = false) {
                     const ul = document.createElement('ul');
                     ul.classList.add('produto');
 
-
                     const img = document.createElement('img');
+                    img.setAttribute('src', res[i].imagem);
+                    img.setAttribute('data-produto', 'imagem');
 
+                    let liId = document.createElement('li');
+                    liId.innerHTML = res[i].id;
+                    liId.setAttribute('data-produto', 'id');
+                    
+                    let liDescricao = document.createElement('li');
+                    liDescricao.innerHTML = res[i].descricao;
+                    liDescricao.setAttribute('data-produto', 'descricao');
+
+                    let liPreco = document.createElement('li');
+                    liPreco.innerHTML = res[i].preco;
+                    liPreco.setAttribute('data-produto', 'preco');
+
+                    let liImagem = document.createElement('li');
+                    ul.appendChild(liImagem).appendChild(img);
+
+                    ul.append(liId, liDescricao, liPreco);
+                    
                     if (btnDelete) {
                         const liBtn = document.createElement('li');
 
@@ -37,23 +55,6 @@ function getProdutos(btnDelete = false) {
 
                         ul.appendChild(liBtn).appendChild(btn);
                     }
-
-                    let liId = document.createElement('li');
-                    liId.setAttribute('data-produto', 'id');
-                    ul.appendChild(liId).innerHTML = res[i].id;
-                    
-
-                    let liDescricao = document.createElement('li');
-                    liDescricao.setAttribute('data-produto', 'descricao');
-                    ul.appendChild(liDescricao).innerHTML = res[i].descricao;
-
-                    let liPreco = document.createElement('li');
-                    liPreco.setAttribute('data-produto', 'preco');
-                    ul.appendChild(liPreco).innerHTML = res[i].preco;
-
-                    let liImagem = document.createElement('li');
-                    liImagem.setAttribute('data-produto', 'imagem');
-                    ul.appendChild(liImagem).appendChild(img).setAttribute('src', res[i].imagem);
 
                     document.querySelector('#listaProdutos').appendChild(ul);
                 }
