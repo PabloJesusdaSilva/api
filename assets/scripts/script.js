@@ -17,6 +17,12 @@ function getProdutos(btnDelete = false) {
             .then(res => {
                 let listaProdutos = document.querySelector('#listaProdutos');
                 listaProdutos.innerHTML = "";
+
+                const liTitutlo = document.createElement('h1');
+                liTitutlo.innerHTML = "Lista Produtos";
+                liTitutlo.classList.add('lista-produtos');
+
+                listaProdutos.appendChild(liTitutlo);
                 
                 for (let i = 0; i < res.length; i++) {
 

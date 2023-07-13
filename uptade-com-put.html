@@ -53,7 +53,7 @@
             </div>
             
             <div>   
-                <button type="button" id="btnAtuazlizar" disabled>Atualizar</button>
+                <button type="button" id="btnAtualizar" disabled>Atualizar</button>
                 
                 <button type="reset" id="reset" disabled>Cancelar</button>
             </div>
@@ -65,7 +65,7 @@
     <script src="assets/scripts/script.js"></script>
 
     <script>
-        const btnAtualizar = document.querySelector('#btnAtuazlizar');
+        const btnAtualizar = document.querySelector('#btnAtualizar');
         
         btnAtualizar.addEventListener('click', () => {
             const id = document.querySelector('input#id').value;
@@ -86,7 +86,7 @@
             })
                 .then(res => {
                     if (res.ok) {
-                        document.querySelector('#resposta').innerHTML = 'Produto Atualizado';
+                        document.querySelector('#resposta').innerHTML = 'Produto Atualizado!';
                     }
                 });
 
@@ -97,7 +97,7 @@
                 
                 setTimeout(() => {
                     toggleAtualizar.classList.remove('toggle-active');
-                }, 1500)
+                }, 2500)
 
             });
 
@@ -133,21 +133,32 @@
             const imagemPreenchido = document.querySelector('input#imagem').value !== "";
             
             if(idPreenchido || descricaoPreenchida || precoPreenchido || imagemPreenchido) {
-                document.querySelector('button#reset').removeAttribute('disabled');
-                document.querySelector('button#btnAtuazlizar').removeAttribute('disabled');
+                document.querySelector('button#reset').removeAttribute('disabled', '');
+                document.querySelector('button#btnAtualizar').removeAttribute('disabled', '');
 
                 if(idPreenchido) {
-                    document.querySelector('button#reset').removeAttribute('disabled');
+                    document.querySelector('button#btnAtualizar').removeAttribute('disabled');
+                } else {
+                    document.querySelector('button#btnAtualizar').setAttribute('disabled', '');
                 }
 
             } else {
                 document.querySelector('button#reset').setAttribute('disabled', '');
-                document.querySelector('button#btnAtuazlizar').setAttribute('disabled', '');
+                document.querySelector('button#btnAtualizar').setAttribute('disabled', '');
             }
         }
+
+        document.addEventListener('keyup', () => {
+            limparFormulario();
+        });
         
+        document.querySelector('.form').addEventListener('reset', () => {
+            document.querySelector('button#reset').setAttribute('disabled', '');
+            document.querySelector('button#btnAtualizar').setAttribute('disabled', '');
+        });
+
         const btnMode = document.querySelector('.btn-mode');
-        
+
         btnMode.addEventListener('click', () => {
             const btnTheme = document.querySelector('.nigth-mode');
 

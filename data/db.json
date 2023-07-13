@@ -3,19 +3,19 @@
     {
       "id": 1,
       "descricao": "Sapato oxford",
-      "preco": "289.90",
+      "preco": "R$ 399.90",
       "imagem": "shopping.webp"
     },
     {
       "id": 2,
-      "descricao": "Sapato Oxford New York",
-      "preco": "269,90",
+      "descricao": "Sapato Oxford Black",
+      "preco": "R$ 269,90",
       "imagem": "shopping.webp"
     },
     {
       "id": 3,
-      "descricao": "Sapato Preto",
-      "preco": "289.90",
+      "descricao": "Sapato ",
+      "preco": "R$ 229.90",
       "imagem": "shopping.webp"
     }
   ]
