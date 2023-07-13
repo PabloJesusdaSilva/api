@@ -2,14 +2,14 @@
   "produtos": [
     {
       "id": 1,
-      "descricao": "SAPATO oxford",
+      "descricao": "Sapato oxford",
       "preco": "289.90",
       "imagem": "shopping.webp"
     },
     {
       "id": 2,
-      "descricao": "Sapato Marrom Oxford",
-      "preco": "209,90",
+      "descricao": "Sapato Oxford New York",
+      "preco": "269,90",
       "imagem": "shopping.webp"
     },
     {

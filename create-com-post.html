@@ -69,6 +69,13 @@
                 })
                 
             getProdutos();
+
+            const toggleAtualizar = document.querySelector('#resposta');
+                toggleAtualizar.classList.add('toggle-active');
+                
+                setTimeout(() => {
+                    toggleAtualizar.classList.remove('toggle-active');
+                }, 1500)
         });
 
      getProdutos()

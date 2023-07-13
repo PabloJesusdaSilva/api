@@ -15,6 +15,11 @@
                 <li>
                     <a type="button" href="uptade-com-put.html">Atualizar produto</a>
                 </li>
+                <li>
+                    <div class="nigth-mode">
+                        <button class="btn-mode"></button>
+                    </div>
+                </li>
             </ul>
         </nav>
     </header>
@@ -87,6 +92,13 @@
 
                 getProdutos();
 
+                const toggleAtualizar = document.querySelector('#resposta');
+                toggleAtualizar.classList.add('toggle-active');
+                
+                setTimeout(() => {
+                    toggleAtualizar.classList.remove('toggle-active');
+                }, 1500)
+
             });
 
         getProdutos();
@@ -111,7 +123,7 @@
                     document.querySelector('input#imagem').value = elementoBase.querySelector('[data-produto="imagem"]').getAttribute('src').split("img/").pop();
 
                     limparFormulario();
-                }
+                } 
             });
 
         function limparFormulario() {
@@ -133,6 +145,15 @@
                 document.querySelector('button#btnAtuazlizar').setAttribute('disabled', '');
             }
         }
+        
+        const btnMode = document.querySelector('.btn-mode');
+        
+        btnMode.addEventListener('click', () => {
+            const btnTheme = document.querySelector('.nigth-mode');
+
+            btnTheme.classList.toggle('btn-active');
+            btnMode.classList.toggle('btn-active')
+        });
     </script>
 </body>
 </html>
