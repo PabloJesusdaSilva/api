@@ -2,7 +2,7 @@
   "produtos": [
     {
       "id": 1,
-      "descricao": "Sapato oxford",
+      "descricao": "Sapato oxford Black",
       "preco": "R$ 399.90",
       "imagem": "shopping.webp"
     },
