@@ -155,6 +155,12 @@
 
             btnTheme.classList.toggle('btn-active');
             btnMode.classList.toggle('btn-active')
+
+            const formDark = document.querySelector('.form');
+            const mainDak = document.querySelector('main');
+
+            formDark.setAttribute('data-theme', 'dark');
+            mainDak.setAttribute('data-theme', 'dark');
         });
     </script>
 </body>
