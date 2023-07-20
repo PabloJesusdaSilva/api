@@ -20,6 +20,8 @@
     </header>
     
     <main>
+        <div id="resposta"></div>
+
         <form method="post" class="form">
             <div id="resposta"></div>
 
@@ -54,7 +56,7 @@
             'imagem': document.querySelector('#imagem').value
         }
 
-        fetch(`http://localhost:3000/produtos/`, {
+        fetch(`https://json-server-vercel-wine-eta.vercel.app/produtos/`, {
             method: 'POST',
             headers: {
                 'Content-type': 'application/json'

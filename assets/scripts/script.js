@@ -6,7 +6,7 @@ document.head.appendChild(linkStyles);
 
 function getProdutos(btnDelete = false) {    
 
-    fetch('http://localhost:3000/produtos', {
+    fetch('https://json-server-vercel-wine-eta.vercel.app/produtos', {
         method:'GET',
         headers: {
             'Content-type': 'application/json'

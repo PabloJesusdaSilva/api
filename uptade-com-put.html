@@ -77,7 +77,7 @@
                 'imagem': document.querySelector('#imagem').value
             }
 
-            fetch(`http://localhost:3000/produtos/${id}`, {
+            fetch(`https://json-server-vercel-wine-eta.vercel.app/produtos/${id}`, {
                 method: 'PUT',
                 headers: {
                     'Content-type': 'application/json'
