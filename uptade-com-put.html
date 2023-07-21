@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Atualização de produtos</title>
 </head>
 <body>
-    <header>
+    <header id="header">
         <nav class="navbar">
             <ul>
                 <li>
@@ -17,7 +17,7 @@
                 </li>
                 <li>
                     <div class="nigth-mode">
-                        <button class="btn-mode"></button>
+                        <button type="button" class="btn-theme"></button>
                     </div>
                 </li>
             </ul>
@@ -26,8 +26,10 @@
 
 
 
-    <main>
-        <div id="resposta"></div>
+    <main id="main">
+        <div id="resposta">
+            <h1>Produto Atualizado!</h1>
+        </div>
         
         <form action="" method="post" class="form">
             <h1>Alteração de Produtos</h1>
@@ -62,106 +64,8 @@
         <div id="listaProdutos"></div>
     </main>
 
-    <script src="assets/scripts/script.js"></script>
-
-    <script>
-        const btnAtualizar = document.querySelector('#btnAtualizar');
-        
-        btnAtualizar.addEventListener('click', () => {
-            const id = document.querySelector('input#id').value;
-
-            const dados = {
-                'id': null,
-                'descricao': document.querySelector('#descricao').value,
-                'preco': document.querySelector('#preco').value,
-                'imagem': document.querySelector('#imagem').value
-            }
-
-            fetch(`https://json-server-vercel-wine-eta.vercel.app/produtos/${id}`, {
-                method: 'PUT',
-                headers: {
-                    'Content-type': 'application/json'
-                },
-                body: JSON.stringify(dados)
-            })
-                .then(res => {
-                    if (res.ok) {
-                        document.querySelector('#resposta').innerHTML = 'Produto Atualizado!';
-                    }
-                });
-
-                getProdutos();
-
-                const toggleAtualizar = document.querySelector('#resposta');
-                toggleAtualizar.classList.add('toggle-active');
-                
-                setTimeout(() => {
-                    toggleAtualizar.classList.remove('toggle-active');
-                }, 2500)
-
-            });
-
-        getProdutos();
-            
-        document.addEventListener('click', e => {
-                if(e.target.closest('ul').classList.contains('produto')) {
-                    const elementoBase = e.target.closest('ul')
-
-                    document.querySelector('input#id').value = elementoBase.querySelector('[data-produto="id"]').innerHTML;
-                    document.querySelector('input#descricao').value = elementoBase.querySelector('[data-produto="descricao"]').innerHTML;
-                    document.querySelector('input#preco').value = elementoBase.querySelector('[data-produto="preco"]').innerHTML;
-                    document.querySelector('input#imagem').value = elementoBase.querySelector('[data-produto="imagem"]').innerHTML;
-
-                    limparFormulario();
-
-                } 
-            });
-
-        function limparFormulario() {
-            const idPreenchido = document.querySelector('input#id').value !== "";
-            const descricaoPreenchida = document.querySelector('input#descricao').value !== "";
-            const precoPreenchido = document.querySelector('input#preco').value !== "";
-            const imagemPreenchido = document.querySelector('input#imagem').value !== "";
-            
-            if(idPreenchido || descricaoPreenchida || precoPreenchido || imagemPreenchido) {
-                document.querySelector('button#reset').removeAttribute('disabled', '');
-                document.querySelector('button#btnAtualizar').removeAttribute('disabled', '');
-
-                if(idPreenchido) {
-                    document.querySelector('button#btnAtualizar').removeAttribute('disabled');
-                } else {
-                    document.querySelector('button#btnAtualizar').setAttribute('disabled', '');
-                }
-
-            } else {
-                document.querySelector('button#reset').setAttribute('disabled', '');
-                document.querySelector('button#btnAtualizar').setAttribute('disabled', '');
-            }
-        }
-
-        document.addEventListener('keyup', () => {
-            limparFormulario();
-        });
-        
-        document.querySelector('.form').addEventListener('reset', () => {
-            document.querySelector('button#reset').setAttribute('disabled', '');
-            document.querySelector('button#btnAtualizar').setAttribute('disabled', '');
-        });
-
-        const btnMode = document.querySelector('.btn-mode');
-
-        btnMode.addEventListener('click', () => {
-            const btnTheme = document.querySelector('.nigth-mode');
-
-            btnTheme.classList.toggle('btn-active');
-            btnMode.classList.toggle('btn-active')
-
-            const formDark = document.querySelector('.form');
-            const mainDak = document.querySelector('main');
-
-            formDark.setAttribute('data-theme', 'dark');
-            mainDak.setAttribute('data-theme', 'dark');
-        });
-    </script>
+    <script type="module" src="assets/scripts/script.js"></script>
+    <script type="module" src="assets/scripts/uptade.js"></script>
+    <script type="module" src="assets/scripts/delete.js"></script>
 </body>
 </html>

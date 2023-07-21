@@ -6,7 +6,7 @@
     <title>Cadastro de produtos</title>
 </head>
 <body>  
-    <header>
+    <header id="header">
         <nav class="navbar">
             <ul>
                 <li>
@@ -15,11 +15,16 @@
                 <li>
                     <a type="button" href="uptade-com-put.html">Atualizar produto</a>
                 </li>
+                <li>
+                    <div class="nigth-mode">
+                        <button type="button" class="btn-theme"></button>
+                    </div>
+                </li>
             </ul>
         </nav>
     </header>
     
-    <main>
+    <main id="main">
         <div id="resposta"></div>
 
         <form method="post" class="form">
@@ -37,50 +42,14 @@
             <div>
                 <button id="btnCadastro" type="button">Cadastrar</button>
 
-                <button>Atualizar</button>
+                <button id="btnAtualizarCreate">Atualizar</button>
             </div>
         </form>
 
         <div id="listaProdutos"></div>
     </main>
 
-    <script src="assets/scripts/script.js"></script>
-
-    <script>
-        document.querySelector('#btnCadastro').addEventListener('click', () => {
-
-            const dados = {
-            'id': null,
-            'descricao': document.querySelector('#descricao').value,
-            'preco': document.querySelector('#preco').value,
-            'imagem': document.querySelector('#imagem').value
-        }
-
-        fetch(`https://json-server-vercel-wine-eta.vercel.app/produtos/`, {
-            method: 'POST',
-            headers: {
-                'Content-type': 'application/json'
-            },
-            body: JSON. stringify(dados)
-        })
-        
-                .then(res => {
-                    if (res.ok) {
-                        document.querySelector('#resposta').innerHTML = 'Produto Atualizado';
-                    }
-                })
-                
-            getProdutos();
-
-            const toggleAtualizar = document.querySelector('#resposta');
-                toggleAtualizar.classList.add('toggle-active');
-                
-                setTimeout(() => {
-                    toggleAtualizar.classList.remove('toggle-active');
-                }, 1500)
-        });
-
-     getProdutos()
-    </script>
+    <script type="module" src="assets/scripts/script.js"></script>
+    <script type="module" src="assets/scripts/create.js"></script>
 </body>
 </html>

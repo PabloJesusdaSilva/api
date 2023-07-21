@@ -49,20 +49,22 @@ function getProdutos(btnDelete = false) {
                     ul.appendChild(liImagem).appendChild(img);
 
                     ul.append(liId, liDescricao, liPreco);
-                    
-                    if (btnDelete) {
-                        const liBtn = document.createElement('li');
+                
+                    const liBtn = document.createElement('li');
+                    const btn = document.createElement('button');
 
-                        const btn = document.createElement('button');
-                        btn.type = 'button';
-                        btn.innerHTML = 'X';
-                        btn.classList.add('btnDelete');
-                        btn.value = res[i].id;
+                    btn.type = 'button';
+                    btn.innerHTML = 'X';
+                    btn.classList.add('btnDelete');
+                    btn.value = res[i].id;
 
-                        ul.appendChild(liBtn).appendChild(btn);
-                    }
+                    ul.appendChild(liBtn).appendChild(btn);
+
+                    ul.append(liId, liDescricao, liPreco, liBtn);
 
                     document.querySelector('#listaProdutos').appendChild(ul);
                 }
             });
 }
+
+export { getProdutos };

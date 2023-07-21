@@ -15,6 +15,11 @@
                 <li>
                     <a type="button" href="uptade-com-put.html">Atualizar produto</a>
                 </li>
+                <li>
+                    <div class="nigth-mode">
+                        <button type="button" class="btn-theme"></button>
+                    </div>
+                </li>
             </ul>
         </nav>
     </header>
@@ -25,7 +30,7 @@
         <div id="listaProdutos"></div>
     </main>
     
-    <script src="assets/scripts/script.js"></script>
+    <script type="module" src="assets/scripts/script.js"></script>
     <script>
         document.querySelector('#btn-fetch').addEventListener('click', () => {
             getProdutos(true);

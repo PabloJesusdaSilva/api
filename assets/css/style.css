@@ -14,7 +14,13 @@ header {
     align-items: center;
     width: 100%;
     height: 120px;
+    transition: all .4s;
     background-color: #e7e7e7;
+}
+
+header.night-mode {
+    background-color: #000;
+    color: #FFF;
 }
 
 .navbar ul {
@@ -41,23 +47,24 @@ header {
     align-items: center;
     position: relative;
     right: -320px;
-    width: 60px;
-    height: 28px;
+    width: 67px;
+    height: 34px;
     padding: 3px;
     border-radius: 20px;
+    cursor: pointer;
     background-color: #c7c5c5;
     transition: all 500ms ease;
 }
 
 .navbar .nigth-mode.btn-active {
-    background-color: #000;
+    background-color: #4b4b4b;
 }
 
-.navbar .nigth-mode .btn-mode {
+.navbar .nigth-mode .btn-theme {
     position: relative;
     left: 2px;
-    width: 22px;
-    height: 22px;
+    width: 26px;
+    height: 26px;
     border-radius: 50%;
     border: none;
     cursor: pointer;
@@ -65,13 +72,13 @@ header {
     background-color: #ffd000;
 }
 
-.navbar .nigth-mode .btn-mode:active {
+.navbar .nigth-mode .btn-theme:active {
     box-shadow: 4px 4px 4px 0 rgba(0, 0, 0, 0.25) inset;
 }
 
-.navbar .nigth-mode .btn-mode.btn-active {
+.navbar .nigth-mode .btn-theme.btn-active {
     position: relative;
-    left: 30px;
+    left: 34px;
     background-color: #007BED;
 }
 
@@ -86,12 +93,12 @@ main {
     align-items: center;
     width: 100%;
     height: auto;
-    transition: all .3s;
+    transition: all .4s;
     background: #FEFFE4;
 }
 
-main[data-theme="dark"] {
-    background-color: #000;
+main.night-mode {
+    background-color: #4b4b4b;
 }
 
 .form {
@@ -105,14 +112,13 @@ main[data-theme="dark"] {
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px #b4b4b4;
-    transition: all .3s;
+    transition: all .4s;
     background-color: #FFF; 
 }
 
-.form[data-theme="dark"] {
-    box-shadow: 0 0 10px #242424;
-    background-color: #313131;
-    color: #FFF;
+.form.night-mode {
+    box-shadow: 0 0 10px #4b4b4b;
+    background-color: #1d1d1d;
 }
 
 .form h1 {
@@ -131,6 +137,7 @@ main[data-theme="dark"] {
     height: 34px;
     margin: 6px 0 30px 0;
     padding-left: 10px;
+    border: 1px solid #9b9b9b;
     border-radius: 4px;
 }
 
@@ -164,6 +171,12 @@ main[data-theme="dark"] {
     background-color: #FFF;
 }
 
+#listaProdutos ul.night-mode {
+    box-shadow: 0 0 10px #272727;
+    background-color: #1d1d1d;
+    color: #FFF;
+}
+
 #listaProdutos ul:hover {
     scale: 1.04;
 }
@@ -175,6 +188,9 @@ main[data-theme="dark"] {
 #listaProdutos ul li {
     padding: 10px;
 }
+
+
+/*Botão Atualizar*/
 
 #btnAtualizar {
     width: 167px;
@@ -197,6 +213,34 @@ main[data-theme="dark"] {
 }
 
 #btnAtualizar:active {
+    box-shadow: 4px 4px 4px 0 rgba(0, 0, 0, 0.25) inset;
+    background-color: #007BED;
+}
+
+
+/*Botão Criar*/
+
+#btnCadastro {
+    width: 167px;
+    height: 46px;
+    font-size: 24px;
+    border-radius: 6px;
+    transition: all 600ms;
+    cursor: pointer;
+    background-color: #48A4FA;
+    color: #FFF;
+}
+
+#btnCadastro:disabled {
+    background-color: #9b9b9b;
+    color: #dbdbdb;
+}
+
+#btnCadastro:hover {
+    background-color: #007BED;
+}
+
+#btnCadastro:active {
     box-shadow: 4px 4px 4px 0 rgba(0, 0, 0, 0.25) inset;
     background-color: #007BED;
 }
@@ -226,18 +270,67 @@ main[data-theme="dark"] {
     background-color: #ff9900;
 }
 
+#btnAtualizarCreate {
+    width: 118px;
+    height: 46px;
+    font-size: 24px;
+    border-radius: 6px;
+    transition: all 600ms;
+    cursor: pointer;
+    background-color: #fab348;
+    color: #FFF;
+}
+
+#btnAtualizarCreate:disabled {
+    background-color: #9b9b9b;
+    color: #dbdbdb;
+}
+
+#btnAtualizarCreate:hover {
+    background-color: #ff9900;
+}
+
+#btnAtualizarCreate:active {
+    box-shadow: 4px 4px 4px 0 rgba(0, 0, 0, 0.25) inset;
+    background-color: #ff9900;
+}
+
+/*Botão Delet*/
+
+.btnDelete {
+    width: 30px;
+    height: 30px;
+    font-size: 1.4rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: .2s;
+    box-shadow: 2px 2px 1px #4b4b4b;
+    background-color: #b92727;
+    color: #FFF;
+}
+
+.btnDelete:hover {
+    transform: translateY(-1px);
+    background-color: #ff0000;
+}
+
 
 #resposta {
     display: inline-block;
     position: absolute;
     top: 160px;
     left: -100%;
-    width: 190px;
+    width: 240px;
     height: auto;
     padding: 20px;
     border-radius: 6px;
     transition: all 500ms;
     background-color: #3CCF4E;
+}
+
+#resposta h1 {
+    font-size: 20px;
     color: #FFF;
 }
 

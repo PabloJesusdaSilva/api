@@ -1,18 +1,6 @@
 {
   "produtos": [
     {
-      "id": 1,
-      "descricao": "Sapato oxford Black",
-      "preco": "R$ 399.90",
-      "imagem": "shopping.webp"
-    },
-    {
-      "id": 2,
-      "descricao": "Sapato Oxford Black",
-      "preco": "R$ 269,90",
-      "imagem": "shopping.webp"
-    },
-    {
       "id": 3,
       "descricao": "Sapato ",
       "preco": "R$ 229.90",
