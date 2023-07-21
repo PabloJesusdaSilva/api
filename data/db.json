@@ -2,7 +2,7 @@
   "produtos": [
     {
       "id": 3,
-      "descricao": "Sapato ",
+      "descricao": "Sapato",
       "preco": "R$ 229.90",
       "imagem": "shopping.webp"
     }

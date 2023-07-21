@@ -1,9 +1,9 @@
-import { getProdutos } from "./script";
+import { getProdutos } from "./script.js";
 
 document.addEventListener('click', e => {            
     if(e.target.classList.contains('btnDelete')) {
 
-        fetch(`http://localhost:3000/produtos/${e.target.value}`, {
+        fetch(`https://json-server-vercel-wine-eta.vercel.app/produtos/${e.target.value}`, {
             method: 'DELETE',
             headers: {
                 'Content-type': 'application/json'
@@ -19,4 +19,6 @@ document.addEventListener('click', e => {
         getProdutos(true);
     }
 });
+
+getProdutos(true)
     

@@ -25,38 +25,12 @@
     </header>
 
     <main>
-        <button id="btn-fetch">Fetch</button>
         
         <div id="listaProdutos"></div>
     </main>
     
     <script type="module" src="assets/scripts/script.js"></script>
-    <script>
-        document.querySelector('#btn-fetch').addEventListener('click', () => {
-            getProdutos(true);
-        }); 
+    <script type="module" src="assets/scripts/delete.js"></script>
 
-        document.addEventListener('click', e => {            
-            if(e.target.classList.contains('btnDelete')) {
-
-                fetch(`http://localhost:3000/produtos/${e.target.value}`, {
-                    method: 'DELETE',
-                    headers: {
-                        'Content-type': 'application/json'
-                    }
-                })
-                
-                    .then(res => {
-                        if(res.ok) {
-                            alert('Produto Atualizado');
-                        }
-                    });
-
-                getProdutos(true);
-            }
-        });
-
-        getProdutos(true);      
-    </script>
 </body>
 </html>

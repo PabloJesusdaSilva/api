@@ -20,9 +20,7 @@ fetch(`https://json-server-vercel-wine-eta.vercel.app/produtos/`, {
         .then(res => {
             if (res.ok) {
                 document.querySelector('#resposta').innerHTML = 'Produto Atualizado';
-            } else {
-                location.reload();
-            }
+            } 
         });
         
     getProdutos();
